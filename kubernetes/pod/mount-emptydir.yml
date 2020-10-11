@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+spec:
+  containers:
+  - name: alpine
+    image: mrtc0/test-alpine:latest
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  - name: debug
+    image: alpine:latest
+    command: ["sleep", "1000"]
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  volumes:
+  - name: data
+    emptyDir: {}
