@@ -1,0 +1,50 @@
+{
+  "id": "1609884698.12345678",
+  "tag": "wazuh.alerts",
+  "data": {},
+  "host": "wazuh-worker-1",
+  "rule": {
+    "id": "40703",
+    "gdpr": [
+      "IV_35.7.d"
+    ],
+    "mail": "false",
+    "gpg13": [
+      "4.3"
+    ],
+    "level": 5,
+    "groups": [
+      "local",
+      "systemd"
+    ],
+    "firedtimes": 134,
+    "description": "Systemd: Service has entered a failed state, and likely has not started."
+  },
+  "time": 1609884699,
+  "agent": {
+    "id": "18793",
+    "ip": "192.168.1.1",
+    "name": "test-host",
+    "labels": {
+      "environment": "development"
+    }
+  },
+  "cluster": {
+    "name": "wazuh",
+    "node": "wazuh-worker-1"
+  },
+  "decoder": {
+    "name": "systemd"
+  },
+  "manager": {
+    "name": "wazuh-manager"
+  },
+  "full_log": "Jan  6 11:11:11 test-host systemd: Unit sshd.service entered failed state.",
+  "location": "/var/log/messages",
+  "timestamp": "2021-01-05T22:11:38.717+00:00",
+  "predecoder": {
+    "hostname": "test-host",
+    "timestamp": "Jan  6 07:11:38",
+    "program_name": "systemd"
+  }
+}
