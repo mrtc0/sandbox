@@ -1,0 +1,3 @@
+```
+$ konstraint create example
+```
