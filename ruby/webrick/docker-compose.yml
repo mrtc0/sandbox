@@ -1,0 +1,19 @@
+version: '2'
+services:
+  app:
+    image: rubylang/ruby:2.7-bionic
+    command: ["ruby", "/app/server.rb"]
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/app
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8888:80"
+    depends_on:
+      - app
+    links:
+      - app
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
