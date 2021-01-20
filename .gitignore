@@ -36,3 +36,6 @@ terraform.rc
 
 terraform/image-scan/src/
 rust/tcp_connect/target
+
+php/laravel/CVE-2021-21263/vendor
+vendor/
