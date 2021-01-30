@@ -1,0 +1,34 @@
+version: "3"
+networks:
+  envoymesh: {}
+services:
+  eds:
+    build:
+      context: server/
+      dockerfile: Dockerfile
+    networks:
+      - envoymesh
+  envoy:
+    image: envoyproxy/envoy:v1.17.0
+    ports:
+      - "80:80"
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
+    networks:
+      - envoymesh
+  nginx1:
+    image: nginx
+    networks:
+      - envoymesh
+  nginx2:
+    image: nginx
+    networks:
+      - envoymesh
+  httpd1:
+    image: httpd
+    networks:
+      - envoymesh
+  httpd2:
+    image: httpd
+    networks:
+      - envoymesh
