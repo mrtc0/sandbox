@@ -1,0 +1,13 @@
+{
+    "name": "mrtc0/sandbox",
+    "authors": [
+        {
+            "name": "Kohei Morita",
+            "email": "mrtc0@ssrf.in"
+        }
+    ],
+    "require": {
+        "ezyang/htmlpurifier": "^4.13",
+        "xemlock/htmlpurifier-html5": "^0.1.11"
+    }
+}
