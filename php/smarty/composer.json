@@ -1,0 +1,12 @@
+{
+    "name": "kohei.morita/smarty",
+    "authors": [
+        {
+            "name": "Kohei Morita",
+            "email": "mrtc0@ssrf.in"
+        }
+    ],
+    "require": {
+        "smarty/smarty": "^3.1"
+    }
+}
