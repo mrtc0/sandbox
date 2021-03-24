@@ -1,0 +1,7 @@
+.vagrant/
+.chef/
+.bundle/
+.kitchen/
+
+vendor/
+nodes/

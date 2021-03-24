@@ -1,0 +1,15 @@
+DEPENDENCIES
+  apt
+  auditd (~> 2.4.0)
+  git
+  openssh
+  sudo
+
+GRAPH
+  apt (7.4.0)
+  auditd (2.4.0)
+  git (10.1.0)
+  iptables (7.1.0)
+  openssh (2.9.0)
+    iptables (>= 7.0)
+  sudo (5.4.6)

@@ -1,0 +1,7 @@
+source "https://api.berkshelf.com"
+
+cookbook 'apt'
+cookbook 'git'
+cookbook 'sudo'
+cookbook 'openssh'
+cookbook 'auditd', '~> 2.4.0'
