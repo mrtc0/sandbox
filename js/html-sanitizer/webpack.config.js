@@ -15,4 +15,10 @@ module.exports = {
       '.ts', '.js',
     ],
   },
+  output: {
+    filename: 'dist.js',
+    path: __dirname + '/dist',
+    library: 'HtmlSanitizer',
+    libraryTarget: 'window'
+  }
 };

@@ -1,11 +1,11 @@
 export interface HtmlSanitizer {
-  sanitize(html: string): string
+  sanitize(html: string): HTMLDivElement
   createTreeWalker(document: Document, node: HTMLDivElement): any
   shouldRemoveNode(node: Node): boolean
 }
 
 export class HtmlSanitizer implements HtmlSanitizer {
-  sanitize(html: string) {
+  sanitize(html: string): HTMLDivElement {
     const sandbox = document.implementation.createHTMLDocument('')
     const root = sandbox.createElement('div')
     root.innerHTML = html
@@ -13,7 +13,7 @@ export class HtmlSanitizer implements HtmlSanitizer {
     var treeWalker = this.createTreeWalker(sandbox, root)
     var node = treeWalker.firstChild()
 
-    if (!node) { return "" }
+    if (!node) { return root }
 
     do {
       if (node.nodeType === Node.TEXT_NODE) {
