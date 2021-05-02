@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <div id="content">
+      <p>hoge</p>
+      <button id="enterFullscreen" onclick="enterFullscreen()">fullscreen</button>
+      <button id="abortFullscreen" onclick="abortFullscreen()">abort</button>
+    </div>
+    <script>
+function enterFullscreen() {
+  var x = document.getElementById("content");
+  if (x.webkitRequestFullScreen) {
+    x.webkitRequestFullScreen();
+  } else if (x.mozRequestFullScreen) {
+  x.mozRequestFullScreen();
+  } else {
+    x.requestFullScreen();
+  }
+}
+function abortFullscreen() {
+  if (document.webkitCancelFullScreen) {
+    document.webkitCancelFullScreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
+</script>
+  </body>
+</html>
