@@ -1,0 +1,26 @@
+<html>
+  <body>
+    <form action="/login.php" method="post" id="login">
+      <input name="username" />
+      <input type="password" name="password" />
+      <button type="submit">Login</button>
+    </form>
+
+    <button onclick="autoLogin()">Auto Login</button>
+  <script>
+    function autoLogin() {
+      // navigator.credentials.get({ 'password': true }).then(credential => { if (credential) { console.log(credential); } else { console.log("has not credentials"); }})
+      navigator.credentials
+        .get({ 'password': true })
+        .then(credential => {
+          if (!credential) { return; }
+          if (credential.type == 'password') {
+            document.querySelector('input[name=username]').value = credential.id;
+            document.querySelector('input[name=password]').value = credential.password;
+            document.getElementById('login').submit();
+          }
+      });
+    }
+  </script>
+  </body>
+</html>
