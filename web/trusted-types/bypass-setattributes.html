@@ -1,0 +1,24 @@
+<html>
+  <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.6/purify.min.js" integrity="sha512-rXAHWSMciPq2KsOxTvUeYNBb45apbcEXUVSIexVPOBnKfD/xo99uUe5M2OOsC49hGdUrkRLYsATkQQHMzUo/ew==" crossorigin="anonymous"></script>
+  <meta http-equiv=content-security-policy content="trusted-types default">
+  </head>
+  <body>
+    <script>
+    const policy = trustedTypes.createPolicy('default', {
+      createScriptURL: (s, type, sink) => {
+        console.log('sanitized');
+        return '';
+      }
+    });
+
+    // http://localhost/#alert(1)
+    // https://github.com/w3c/webappsec-trusted-types/issues/64
+    const rawHTML = decodeURIComponent(location.hash.substring(1));
+    const a = document.createElement('script');
+    a.src = rawHTML;
+    console.log(a)
+    document.body.appendChild(a);
+    </script>
+  </body>
+</html>
