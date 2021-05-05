@@ -1,0 +1,25 @@
+<html>
+  <head>
+  <script src="https://w3c.github.io/webappsec-trusted-types/dist/es5/trustedtypes.build.js" data-csp="trusted-types example dompurify; require-trusted-types-for 'script'"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.6/purify.min.js" integrity="sha512-rXAHWSMciPq2KsOxTvUeYNBb45apbcEXUVSIexVPOBnKfD/xo99uUe5M2OOsC49hGdUrkRLYsATkQQHMzUo/ew==" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <script>
+    const policy = trustedTypes.createPolicy('example', {
+      createHTML: (untsutedValue) => {
+        console.log('sanitized');
+        return DOMPurify.sanitize(untsutedValue, {RETURN_TRUSTED_TYPE: true})
+      }
+    });
+
+    // http://localhost/#alert(1)
+    // https://github.com/w3c/webappsec-trusted-types/issues/133
+    const rawHTML = decodeURIComponent(location.hash.substring(1));
+    const s = document.createElement('script');
+    const p = document.createElement('p');
+    s.appendChild(p);
+    p.insertAdjacentText('beforeBegin', rawHTML);
+    document.body.appendChild(s);
+    </script>
+  </body>
+</html>
