@@ -1,6 +1,6 @@
 <?php
 
-header("Content-Security-Policy: trusted-types default dompurify; require-trusted-types-for 'script'");
+header("Content-Security-Policy: trusted-types example dompurify; require-trusted-types-for 'script'");
 ?>
 
 <html>
@@ -9,16 +9,16 @@ header("Content-Security-Policy: trusted-types default dompurify; require-truste
   </head>
   <body>
     <script>
-    const policy = trustedTypes.createPolicy('default', {
+    const policy = trustedTypes.createPolicy('example', {
       createHTML: (untsutedValue) => {
-        return DOMPurify.sanitize(untsutedValue)
+        return DOMPurify.sanitize(untsutedValue, {RETURN_TRUSTED_TYPE: true})
       }
     });
-    
+
     // http://localhost/#'%22%3E%3Csvg/onload=alert(1)%3E
     const rawHTML = decodeURIComponent(location.hash.substring(1));
-    document.body.innerHTML = rawHTML;
-    // document.body.innerHTML = policy.createHTML(rawHTML);
+    // document.body.innerHTML = rawHTML;
+    document.body.innerHTML = policy.createHTML(rawHTML);
     </script>
   </body>
 </html>
