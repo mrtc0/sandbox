@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        [token]::after {
+            content: attr(token) " ";
+        };
+    </style>
+</head>
+<body>
+    <p token="aaaaaaaaaa">leaked: </p>
+</body>
+</html>
