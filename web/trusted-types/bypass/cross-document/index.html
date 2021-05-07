@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.6/purify.min.js" integrity="sha512-rXAHWSMciPq2KsOxTvUeYNBb45apbcEXUVSIexVPOBnKfD/xo99uUe5M2OOsC49hGdUrkRLYsATkQQHMzUo/ew==" crossorigin="anonymous"></script>
+  <meta http-equiv=content-security-policy content="require-trusted-types-for 'script'; trusted-types default dompurify">
+</head>
+<body>
+  <iframe src="robots.txt" name="new"></iframe>
+  <script>
+    trustedTypes.createPolicy('default', {
+      createHTML: (untsutedValue) => {
+        return DOMPurify.sanitize(untsutedValue, {RETURN_TRUSTED_TYPE: true})
+      },
+      createScriptURL: (url) => {
+        return ""
+      }
+    });
+
+    const url = "javascript:alert(window.document.location)";
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = 'new';
+    a.textContent = 'go';
+    document.body.appendChild(a);
+  </script>
+</body>
+</html>

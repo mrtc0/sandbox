@@ -1,17 +1,21 @@
 <html>
   <head>
-  <meta http-equiv=content-security-policy content="trusted-types default dompurify">
+  <meta http-equiv=content-security-policy content="require-trusted-types-for 'script'; trusted-types default dompurify">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.6/purify.min.js" integrity="sha512-rXAHWSMciPq2KsOxTvUeYNBb45apbcEXUVSIexVPOBnKfD/xo99uUe5M2OOsC49hGdUrkRLYsATkQQHMzUo/ew==" crossorigin="anonymous"></script>
   </head>
   <body>
     <script>
+    if (window.trustedTypes && trustedTypes.createPolicy) {
     trustedTypes.createPolicy('default', {
-      createHTML: (untsutedValue) => {
+      createHTML: (string, sink) => {
         console.log("sanitize")
-        return DOMPurify.sanitize(untsutedValue, {RETURN_TRUSTED_TYPE: true})
+        return DOMPurify.sanitize(string, {RETURN_TRUSTED_TYPE: true})
       }
     });
+  } else {
+    console.log("not support")
+  }
 
     // http://localhost/#'%22%3E%3Csvg/onload=alert(1)%3E
     const rawHTML = decodeURIComponent(location.hash.substring(1));
