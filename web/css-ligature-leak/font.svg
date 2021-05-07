@@ -1,0 +1,35 @@
+<svg>
+  <defs>
+    <font id="hack" horiz-adv-x="0">
+      <font-face font-family="hack" units-per-em="1000" />
+      <missing-glyph />
+      <glyph unicode="a" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="b" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="c" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="d" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="e" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="f" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="g" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="h" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="i" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="j" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="k" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="l" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="m" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="n" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="o" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="p" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="q" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="r" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="s" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="t" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="u" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="v" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="w" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="x" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="y" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="z" horiz-adv-x="0" d="M1 0z"/>
+      <glyph unicode="hoge" horiz-adv-x="9000" d="M1 0z"/>
+    </font>
+  </defs>
+</svg>
