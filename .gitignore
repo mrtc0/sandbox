@@ -39,3 +39,5 @@ rust/tcp_connect/target
 
 php/laravel/CVE-2021-21263/vendor
 vendor/
+
+proxy-wasm/my-wasm-filter/target

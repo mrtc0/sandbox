@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  envoy:
+    image: envoyproxy/envoy:v1.17.0
+    command: envoy -c /etc/envoy.yaml
+    volumes:
+      - "./envoy/envoy.yaml:/etc/envoy.yaml:ro"
+      - "./target/wasm32-unknown-unknown/release/my_wasm_filter.wasm:/etc/my_wasm_filter.wasm"
+    ports:
+      - "9000:9000"
+      - "8000:8000"
+  echo:
+    image: hashicorp/http-echo
+    command:
+      - '-text="Hello, proxy-wasm"'
