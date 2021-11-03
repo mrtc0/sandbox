@@ -1,1 +1,1 @@
-FROM golang:1.12-alpine
+FROM golang@sha256:c489190d31e60400b94cd404e27bb5eec4c484ab606e5b5eff75707d5ec6a2aa
