@@ -3,7 +3,7 @@ module "vpc" {
 
   # version = "2.47.0"
   # https://github.com/terraform-aws-modules/terraform-aws-vpc/issues/267
-  version = "~> 1.66.0"
+  version = "~> 3.19.0"
 
   name = "test-vpc"
   cidr = "10.0.0.0/16"
