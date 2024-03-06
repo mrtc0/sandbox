@@ -3,6 +3,6 @@ module github.com/mrtc0/sandbox/envoy/eds-server/server
 go 1.15
 
 require (
-	github.com/envoyproxy/go-control-plane v0.9.9-0.20201210154907-fd9021fe5dad
-	google.golang.org/grpc v1.35.0
+	github.com/envoyproxy/go-control-plane v0.12.0
+	google.golang.org/grpc v1.62.1
 )
