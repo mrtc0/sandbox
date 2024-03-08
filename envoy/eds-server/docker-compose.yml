@@ -9,7 +9,7 @@ services:
     networks:
       - envoymesh
   envoy:
-    image: envoyproxy/envoy:v1.17.0
+    image: envoyproxy/envoy:v1.29.2
     ports:
       - "80:80"
     volumes:
