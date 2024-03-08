@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   envoy:
-    image: envoyproxy/envoy:v1.17.0
+    image: envoyproxy/envoy:v1.29.2
     command: envoy -c /etc/envoy.yaml
     volumes:
       - "./envoy/envoy.yaml:/etc/envoy.yaml:ro"
