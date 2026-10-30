@@ -1,4 +1,4 @@
-FROM golang@sha256:24bd48a274920bf47ead96c5a2db8e6a3fbe26e8ae27557c2caa9aeae562a998
+FROM golang@sha256:5bbe76a31abbe0f1449d7820e550131c020b097c24d3bcfc5ad1231779982c1c
 
 ADD main.go /main.go
 
